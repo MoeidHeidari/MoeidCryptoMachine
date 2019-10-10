@@ -1,10 +1,13 @@
 package com.example.cryptomachine;
 
 
+import android.widget.ImageView;
+
 import com.example.cryptomachine.Annotations.ShouldBeEncrypted;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
+import java.security.Key;
 import java.util.List;
 
 public class CipherMan implements CipherManView {
@@ -17,14 +20,19 @@ public class CipherMan implements CipherManView {
     private CipherMode cipherMode;
 
 
-    private CipherMan() {
+    private CipherMan()
+    {
+        key="";
+        IV="";
 
     }
 
     private static CipherMan cipher;
 
 
-    public static CipherMan with() {
+    public static CipherMan with()
+    {
+
         cipher = new CipherMan();
         return cipher;
     }
