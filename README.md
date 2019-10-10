@@ -68,4 +68,92 @@ Simple JSON
   }
 }
 ```
+## Method
+Algorithm: AES
+Mode:CBC
+Key size in Bits:128
+IV (Optional)
+Output Text Format : Base64
+
+## How to use
+
+Step 1:
+In your Models specify any attribute you want to do the Encryption or Decryption on with @ShouldBeEncrypted Annotation (just String attributes).
+Example : 
+```
+public class ViewModel
+{
+    @ShouldBeEncrypted
+    String name;
+    String family;
+    int age;
+
+    public List<Contact> contacts=null;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getFamily() {
+        return family;
+    }
+
+    public void setFamily(String family) {
+        this.family = family;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public List<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+    }
+
+    public ViewModel(String name, String family, int age, List<Contact> contacts) {
+        this.name = name;
+        this.family = family;
+        this.age = age;
+        this.contacts = contacts;
+    }
+
+
+}
+```
+## Note
+Define List type attributes with Public access modifier.
+
+Step 2:
+```
+                CipherMan.with()
+                    .setMode(CipherMode.ECRYPT) // Modes: Excrypt,Decrypt
+                    .setClassType(ViewModel.class)//Class type
+                    .setKey("1234567891234567")// 128 key
+                    .setIV("ThisIsASecretKey")//IV
+                    .setObject(model)//Instantiated object which you want to perform the operation on
+                    .doTheOperation(); // That's all :)
+```
+## Author
+
+* **Moeid Heidari** 
+
+## And a special thanks to everyone who helped me
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+
 
