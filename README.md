@@ -132,6 +132,20 @@ public class ViewModel
 
 }
 ```
+
+## How to Install
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+dependencies {
+	        implementation 'com.github.MoeidHeidari:MoeidCryptoMachine:0.2.0'
+	}
+
+```
 ## Note
 Define List type attributes with Public access modifier.
 
