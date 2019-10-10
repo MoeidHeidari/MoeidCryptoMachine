@@ -69,11 +69,11 @@ Simple JSON
 }
 ```
 ## Method
-Algorithm: AES
-Mode:CBC
-Key size in Bits:128
-IV (Optional)
-Output Text Format : Base64
+Algorithm: AES, 
+Mode:CBC, 
+Key size in Bits:128, 
+IV (Optional), 
+Output Text Format : Base64 
 
 ## How to use
 
